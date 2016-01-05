@@ -43,7 +43,7 @@ module RailsClientTimezone
       begin
         ip_addr = controller.request.remote_ip
         geo_timezone = GeoIP.new('GeoLiteCity.dat').city(ip_addr) ? GeoIP.new('GeoLiteCity.dat').city(ip_addr).timezone : nil
-        timezone_name = geo_timezone && Timezone::ActiveSupport.format(geo_timezone) ? Timezone::ActiveSupport.format(geo_timezone) : Time.zone_default.name
+        timezone_name = geo_timezone && ActiveSupportExt.format(geo_timezone) ? ActiveSupportExt.format(geo_timezone) : Time.zone_default.name
       rescue Exception => e
         ActiveSupport::TimeZone[Time.zone_default.name]
       end

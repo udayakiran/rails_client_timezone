@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
     lib/rails_client_timezone/filter.rb
     lib/rails_client_timezone/version.rb
     lib/rails_client_timezone/setting.rb
-    lib/rails_client_timezone/active_support.rb
+    lib/rails_client_timezone/active_support_ext.rb
     lib/geoip.rb
     rails_client_timezone.gemspec
   ]

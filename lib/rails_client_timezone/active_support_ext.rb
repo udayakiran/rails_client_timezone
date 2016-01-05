@@ -1,6 +1,6 @@
-module Timezone
+module RailsClientTimezone
   # ActiveSupport class for mapping tz info identifiers to rails identifiers
-  class ActiveSupport
+  class ActiveSupportExt
     TIMEZONE_MAPPING = {
       "Pacific/Midway"=>"International Date Line West",
       "Pacific/Midway"=>"Midway Island",

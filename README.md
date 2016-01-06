@@ -50,6 +50,17 @@ RailsClientTimezone::Setting.baseline_year = 2014 #default value is 2011. Accept
     If you use jquery, copy the js code from 'assets/set_browser_offset_cokies_jquery.js' and paste it in your js file which is inlcuded in every page.
     If you use prototypejs, copy the js code 'from assets/set_browser_offset_cokies_prototype.js' and paste it in your js file which is inlcuded in every page.
 
+### For :ip and :smart mode -
+Follow the below step if you are using :ip or :smart mode:
+
+  a) By default Geoip City db file is available in data directory, to override that db file you can download it from Download geoip city database from <geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz> and place anywhere in your app.
+     Create a file in your initializers and set the geo ip city db file path. This step is optional.
+
+``` 
+# Say in config/initializers/rails_client_tz_init.rb
+RailsClientTimezone::Setting.geoip_data_path = <file_path>
+```
+
 ## Saving time zone in the database -
 
 If you like to save the last_known_timezone of any user in the database, it can be done by accessing the cookie ":last_known_tz" any where in your controller.

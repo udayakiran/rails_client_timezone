@@ -3,7 +3,6 @@ module RailsClientTimezone
   class ActiveSupportExt
     TIMEZONE_MAPPING = {
       "Pacific/Midway"=>"International Date Line West",
-      "Pacific/Pago_Pago"=>"American Samoa",
       "Pacific/Honolulu"=>"Hawaii",
       "America/Juneau"=>"Alaska",
       "America/Los_Angeles"=>"Pacific Time (US & Canada)",

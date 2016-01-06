@@ -3,7 +3,6 @@ module RailsClientTimezone
   class ActiveSupportExt
     TIMEZONE_MAPPING = {
       "Pacific/Midway"=>"International Date Line West",
-      "Pacific/Midway"=>"Midway Island",
       "Pacific/Pago_Pago"=>"American Samoa",
       "Pacific/Honolulu"=>"Hawaii",
       "America/Juneau"=>"Alaska",
@@ -88,7 +87,6 @@ module RailsClientTimezone
       "Asia/Baghdad"=>"Baghdad",
       "Asia/Tehran"=>"Tehran",
       "Asia/Muscat"=>"Abu Dhabi",
-      "Asia/Muscat"=>"Muscat",
       "Asia/Baku"=>"Baku",
       "Asia/Tbilisi"=>"Tbilisi",
       "Asia/Yerevan"=>"Yerevan",
@@ -147,7 +145,6 @@ module RailsClientTimezone
       "Asia/Kamchatka"=>"Kamchatka",
       "Pacific/Majuro"=>"Marshall Is.",
       "Pacific/Auckland"=>"Auckland",
-      "Pacific/Auckland"=>"Wellington",
       "Pacific/Tongatapu"=>"Nuku'alofa",
       "Pacific/Fakaofo"=>"Tokelau Is.",
       "Pacific/Chatham"=>"Chatham Is.",

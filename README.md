@@ -7,8 +7,20 @@ The purpose of this gem is to track client's time zone for each request in the b
 
 ## Installation -
 
+### Rubygems
+
 ```
-  gem 'rails_client_timezone', '0.7.0', :git => 'https://github.com/udayakiran/rails_client_timezone'
+gem install rails_client_timezone
+
+```
+
+### Gemfile
+```
+gem 'rails_client_timezone', '~> 0.9.0'
+```
+OR from git source
+```
+  gem 'rails_client_timezone', '0.9.0', :git => 'https://github.com/udayakiran/rails_client_timezone'
 ```
 
 ## Usage -

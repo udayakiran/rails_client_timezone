@@ -11,7 +11,6 @@ The purpose of this gem is to track client's time zone for each request in the b
 
 ```
 gem install rails_client_timezone
-
 ```
 
 ### Gemfile

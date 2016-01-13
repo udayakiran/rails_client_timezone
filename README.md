@@ -7,13 +7,13 @@ The purpose of this gem is to track client's time zone for each request in the b
 
 ## Installation -
 
-### As a stand alone gem - 
+#### As a stand alone gem - 
 
 ```
 gem install rails_client_timezone
 ```
 
-### Using Gemfile -
+#### Using Gemfile -
 ```
 gem 'rails_client_timezone', '~> 0.9.0'
 ```
@@ -46,7 +46,8 @@ RailsClientTimezone::Setting.mode = :ip #default value is :smart. Accepted value
  prepend_around_action RailsClientTimezone::Filter #Rails 4.2.x or later
 ```
 
-### For :browser and :smart mode -
+#### For :browser and :smart mode -
+
 Follow the below 2 steps if you are using :browser or :smart mode:
 
   a) Create a file in your initializers and set baseline year This step is optional. This means we are worried about time zone changes that occurred till this year. My suggestion is to keep this year same as either the year you are starting this project or the year when your rails version is released.
@@ -61,7 +62,8 @@ RailsClientTimezone::Setting.baseline_year = 2014 #default value is 2011. Accept
     If you use jquery, copy the js code from 'assets/set_browser_offset_cokies_jquery.js' and paste it in your js file which is inlcuded in every page.
     If you use prototypejs, copy the js code 'from assets/set_browser_offset_cokies_prototype.js' and paste it in your js file which is inlcuded in every page.
 
-### For :ip and :smart mode -
+#### For :ip and :smart mode -
+
 Follow the below step if you are using :ip or :smart mode:
 
   a) By default Geoip City db file is available in data directory, to override that db file you can download it from Download geoip city database from <geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz> and place anywhere in your app.

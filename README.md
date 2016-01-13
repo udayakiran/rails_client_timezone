@@ -7,13 +7,13 @@ The purpose of this gem is to track client's time zone for each request in the b
 
 ## Installation -
 
-### Rubygems
+### As a stand alone gem - 
 
 ```
 gem install rails_client_timezone
 ```
 
-### Gemfile
+### Using Gemfile -
 ```
 gem 'rails_client_timezone', '~> 0.9.0'
 ```
@@ -32,11 +32,11 @@ OR from git source
 RailsClientTimezone::Setting.mode = :ip #default value is :smart. Accepted values - :browser, :ip, :smart 
 ```
 
-:ip - Time zone will be detected based on the request's ip address(using geoip gem's logic)
+**:ip** - Time zone will be detected based on the request's ip address(using geoip gem's logic)
 
-:browser - Time zone will be detected based on browser utc offsets.
+**:browser** - Time zone will be detected based on browser utc offsets.
 
-:smart - Time zone will be detected by browser if offsets are set or it falls back to ip(:browser mode first, which falls back to :ip mode).
+**:smart** - Time zone will be detected by browser if offsets are set or it falls back to ip(:browser mode first, which falls back to :ip mode).
 
  2) Include the around filter in every controller that needs to run code in user's timezone. If you need it for all controllers obviously add it to the application controller.
 
@@ -69,19 +69,20 @@ Follow the below step if you are using :ip or :smart mode:
 
 ``` 
 # Say in config/initializers/rails_client_tz_init.rb
-RailsClientTimezone::Setting.geoip_data_path = <file_path>
+
+RailsClientTimezone::Setting.geoip_data_path = <file_path>  #Default path is <gem_source>/data/geoip/GeoLiteCity.dat
 ```
 
 ## Saving time zone in the database -
 
-If you like to save the last_known_timezone of any user in the database, it can be done by accessing the cookie ":last_known_tz" any where in your controller.
-so, 'controller.cookies[:last_known_tz]' would give you the user's last know timezone name once 'RailsClientTimezone::Filter' is done with the determining of the time zone from offsets.
+If you like to save the last_known_timezone of any user in the database, it can be done by accessing the cookie `:last_known_tz` any where in your controller.
+so, `controller.cookies[:last_known_tz]` would give you the user's last know timezone name once `RailsClientTimezone::Filter` is done with the determining of the time zone from offsets.
 
 ## Practices in your code -
 
-1. Use Time.zone.* not Time.* :- Most of the scenarios we need to deal with times in the current time zone not in the system time zone on which app is running. So, we should use Time.zone.now, Time.zone.parse and time_obj.in_time_zone(Time.zone) when we are dealing with time information.
+*1. Use Time.zone.* not Time.* -* Most of the scenarios we need to deal with times in the current time zone not in the system time zone on which app is running. So, we should use Time.zone.now, Time.zone.parse and time_obj.in_time_zone(Time.zone) when we are dealing with time information.
 
-2. Use Time.use_zone :- When we need to operate in other time zones than the current system, enlose that code in Time.use_zone block. This sets back the system time zone once the code completes execution or even when exception occurs. Otherwise we should always remember to set the system's time zone back to default.
+*2. Use Time.use_zone -**  When we need to operate in other time zones than the current system, enlose that code in Time.use_zone block. This sets back the system time zone once the code completes execution or even when exception occurs. Otherwise we should always remember to set the system's time zone back to default.
 
 # To do -
 

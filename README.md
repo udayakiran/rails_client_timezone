@@ -80,9 +80,9 @@ so, `controller.cookies[:last_known_tz]` would give you the user's last know tim
 
 ## Practices in your code -
 
-*1. Use Time.zone.* not Time.* -* Most of the scenarios we need to deal with times in the current time zone not in the system time zone on which app is running. So, we should use Time.zone.now, Time.zone.parse and time_obj.in_time_zone(Time.zone) when we are dealing with time information.
+1. Use `Time.zone.*` not `Time.* ` -  Most of the scenarios we need to deal with times in the current time zone not in the system time zone on which app is running. So, we should use Time.zone.now, Time.zone.parse and time_obj.in_time_zone(Time.zone) when we are dealing with time information.
 
-*2. Use Time.use_zone -**  When we need to operate in other time zones than the current system, enlose that code in Time.use_zone block. This sets back the system time zone once the code completes execution or even when exception occurs. Otherwise we should always remember to set the system's time zone back to default.
+2. Use `Time.use_zone` -  When we need to operate in other time zones than the current system, enlose that code in Time.use_zone block. This sets back the system time zone once the code completes execution or even when exception occurs. Otherwise we should always remember to set the system's time zone back to default.
 
 # To do -
 

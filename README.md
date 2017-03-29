@@ -15,11 +15,11 @@ gem install rails_client_timezone
 
 #### Using Gemfile -
 ```
-gem 'rails_client_timezone', '~> 0.9.0'
+gem 'rails_client_timezone', '~> 0.1.0'
 ```
 OR from git source
 ```
-  gem 'rails_client_timezone', '0.9.0', :git => 'https://github.com/udayakiran/rails_client_timezone'
+  gem 'rails_client_timezone', '0.1.0', :git => 'https://github.com/udayakiran/rails_client_timezone'
 ```
 
 ## Usage -

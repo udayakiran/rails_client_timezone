@@ -47,7 +47,8 @@ module RailsClientTimezone
       rescue Exception => e
         ActiveSupport::TimeZone[Time.zone_default.name]
       end
-      ActiveSupport::TimeZone[timezone_name]
+      tz = ActiveSupport::TimeZone[timezone_name]
+      tz ? tz : ActiveSupport::TimeZone[Time.zone_default.name]
     end
     
     # Returns the time zone using both ip address and browser offset
